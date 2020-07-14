@@ -1,0 +1,53 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        position: relative;
+    }
+    .center{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: #f5de;
+        padding: 2rem;
+        box-shadow: 10px 10px 0 #0f0f0f;
+        color: #fafafa;
+        text-align: center;
+    }
+    .margin-fix{
+        margin: 1rem;
+    }
+</style>
+
+<body>
+   <div class="center">
+        <h1 class="margin-fix">Greetings!</h1>
+        <form action="{% url 'password' %}" class="margin-fix">
+            <select name="length">
+                <option value="none" selected="selected">Choose an option</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+            </select>
+            <br>
+            <input class="margin-fix" type="checkbox" name="uppercase"><label for="uppercase">Uppercases</label>
+            <br>
+            <input class="margin-fix" type="checkbox" name="numbers"><label for="numbers">Numbers</label>
+            <br>
+            <input class="margin-fix" type="checkbox" name="special"><label for="special">Special Characters</label>
+            <br>
+            <input class="margin-fix" type="submit" value="Generate Password">
+        </form>
+        <a href="{% url 'about' %}">About</a>
+    </div> 
+</body>
