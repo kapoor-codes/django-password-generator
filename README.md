@@ -6,4 +6,8 @@
 * Clone the project on your local machine.
 * Now to run the server on your machine, just do '''py manage.py runserver'''.
 
-Screenshots:
+## Screenshots:
+
+![](Screenshots/Capture.PNG)
+
+![](Screenshots/Capture2.PNG)
