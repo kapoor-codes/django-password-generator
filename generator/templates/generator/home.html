@@ -1,4 +1,6 @@
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+
     *{
         margin: 0;
         padding: 0;
@@ -6,28 +8,72 @@
     }
     body{
         position: relative;
+        font-family: 'Oswald', sans-serif;
+        background-color: #000000;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23180d1c' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23261431' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23351947' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%23451e5e' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23552277' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+        background-attachment: fixed;
+        background-size: cover;
     }
     .center{
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%,-50%);
-        background: #f5de;
+        background: #6021B0;
         padding: 2rem;
-        box-shadow: 10px 10px 0 #0f0f0f;
         color: #fafafa;
         text-align: center;
+        transition: all .5s;
+    }
+    .center:hover{
+        box-shadow: 10px 10px 0 #0f0f0f, 20px 20px 0 #67de0f;
+    }
+    a{
+        font-size: 2rem;
+        text-decoration: none;
+        color: #fafafa;
+        margin: 0 auto;
+        text-align: center;
+        display: block;
+        border: 1px solid #fafafa;
     }
     .margin-fix{
         margin: 1rem;
     }
+    select,
+    select:active{
+        outline: none;
+        background: #fff;
+        border: none;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    #btn{
+        color: #fff;
+        padding: 1rem;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: none;
+        border: 2px solid #fff;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 2vh;
+    }
+    #btn:hover{
+        background: #fff;
+        color: #6021B0;
+    }
 </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <body>
    <div class="center">
         <h1 class="margin-fix">Greetings!</h1>
         <form action="{% url 'password' %}" class="margin-fix">
-            <select name="length">
+            <select name="length" required>
                 <option value="none" selected="selected">Choose an option</option>
                 <option value="6">6</option>
                 <option value="7">7</option>
@@ -46,8 +92,7 @@
             <br>
             <input class="margin-fix" type="checkbox" name="special"><label for="special">Special Characters</label>
             <br>
-            <input class="margin-fix" type="submit" value="Generate Password">
+            <button class="margin-fix" type="submit" id="btn">Generate!</button>
         </form>
-        <a href="{% url 'about' %}">About</a>
-    </div> 
+    </div>
 </body>
